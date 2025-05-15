@@ -1,0 +1,87 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #e0f7fa;
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 600px;
+	margin: 5rem auto;
+	padding: 2rem;
+	background-color: white;
+	border-radius: 1rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+h2 {
+	color: #0079a1;
+	margin: 0;
+}
+
+.button-retour {
+	background-color: #0079a1;
+	color: white;
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	font-size: 0.9rem;
+	transition: background-color 0.3s;
+}
+
+.button-retour:hover {
+	background-color: #005b7f;
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5rem;
+	color: #0079a1;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"],
+	select {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 0.5rem;
+}
+
+.button-group {
+	display: flex; /* Active le mode flexbox */
+	justify-content: space-evenly; /* Espacement égal entre les boutons */
+	gap: 1rem; /* Ajoute un espace entre les boutons */
+	margin-top: 1rem; /* Espace au-dessus des boutons */
+}
+
+button {
+	background-color: #0079a1;
+	color: white;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	flex: 1; /* S'assure que les boutons ont la même largeur */
+	max-width: 200px; /* Limite la largeur maximale des boutons */
+}
+
+button:hover {
+	background-color: #005b7f;
+}
+
+.signup-link {
+	text-align: center;
+	margin-top: 1rem;
+}

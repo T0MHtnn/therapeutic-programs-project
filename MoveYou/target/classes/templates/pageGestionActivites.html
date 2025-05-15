@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security5"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche d'Activités</title>
+    <link rel="stylesheet" href="stylesPageGestionActivites.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- Cadre affichage des activités -->
+    <div class="container">
+    	<form th:action="@{/pageProgrammeTherapeutique}" method="get">
+    	    <input type="hidden" id="progId" name="progId" th:value="${progId != null ? progId : ''}">
+			<button type="submit" class="btn-retour">Retour au Programme Thérapeutique</button>
+		</form>
+    	
+        <h2>Recherche d'Activités</h2>
+        <form class="search-form" th:action="@{/pageGestionActivites}" method="get">
+        	<input type="hidden" id="progId" name="progId" th:value="${progId != null ? progId : ''}">
+            <input type="text" id="motCle" name="motCle" th:value="${motCle}" placeholder="Rechercher une activité...">
+            <button type="submit">Rechercher</button>
+        </form>
+        
+        <p th:if="${alreadyAdd != null}" class="error-message" th:text="${alreadyAdd}"></p>
+        
+		<ul class="activities-list" id="activities-list">
+		    <li th:each="entry : ${dicoActivitesEvaluation}" class="activity-item">
+		        <div class="activity-encart">
+		            <div class="programme-header">
+		                <a th:text="${entry.key.name} + ' - ' + ${entry.key.description}" class="activity-link" data-bs-toggle="modal" th:data-bs-target="'#displayActiviteModal' + ${entry.key.activityId}"></a>
+		            </div>
+		            <p th:if="${alreadyAdd != null && activityIdAlreadyAdd == entry.key.activityId}" class="error-message" th:text="${alreadyAdd}"></p>
+		            <form th:action="@{/programmeTherapeutique/ajoutActivite}" method="post" class="add-form">
+		                <input type="hidden" id="progId" name="progId" th:value="${progId != null ? progId : ''}">
+		                <input type="hidden" id="activityId" name="activityId" th:value="${entry.key.activityId}">
+		                <button type="submit" class="add-button">Ajouter</button>
+		            </form>
+		        </div>
+		    </li>
+		</ul>
+        
+            <!------------- Modal servant de pop pour afficher les infos d'une activité ------------->
+			<div th:each="entry : ${dicoActivitesEvaluation}">
+			    <div class="modal fade" th:id="'displayActiviteModal' + ${entry.key.activityId}" tabindex="-1" aria-labelledby="displayActiviteModalLabel" aria-hidden="true">
+			        <div class="modal-dialog">
+			            <div class="modal-content">
+			                <div class="modal-header">
+			                    <h5 class="modal-title" th:text="${entry.key.name}" style="color: black;"></h5>
+			                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			                </div>
+			                <div class="modal-body">
+			               		<h5 class="modal-title" style="color: black;">Description</h5>
+			                    <p th:text="${entry.key.description}"></p>
+			                </div>
+			            	<div class="modal-body">
+			            		<h5 class="modal-title" style="color: black;">Discipline</h5>
+			                    <p th:text="${entry.key.discipline}"></p>
+			                </div>
+			                <div class="modal-body">
+			            		<h5 class="modal-title" style="color: black;">Pathologies traitées</h5>
+			                    <p th:text="${entry.key.pathologies}"></p>
+			                </div>
+			               	<div class="modal-body">
+					            <h5 class="modal-title" style="color: black;">Note donnée</h5>
+			                    <p th:text="${entry.value != null} ? ${entry.value.note} : 'Pas encore de note !'"></p>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<!-- ---------------------------------------------------------------------------------- -->
+			
+   		 </div>
+    
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

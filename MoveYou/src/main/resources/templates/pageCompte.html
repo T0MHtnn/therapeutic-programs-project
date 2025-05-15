@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte</title>
+    <link rel="stylesheet" href="pageCompte.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Compte</h2>
+            <a href="/index" class="button-retour">Accueil</a>
+        </div>
+        <!-- Formulaire de modification -->
+        <form th:action="@{/validModifCompte}" method="post">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="modifEmail" required th:value="${email}">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Nouveau mot de passe</label>
+                <input type="password" id="password" name="modifPassword">
+            </div>
+            
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="modifNom" th:value="${nom}">
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="modifPrenom" th:value="${prenom}">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Âge</label>
+                <input type="number" id="age" name="modifAge" th:value="${age}">
+            </div>
+
+            <div class="form-group">
+                <label for="genre">Genre</label>
+                <select id="genre" name="modifGenre">
+                    <option value="homme" th:attr="selected=${genre == 'homme'}">Homme</option>
+                    <option value="femme" th:attr="selected=${genre == 'femme'}">Femme</option>
+                    <option value="autre" th:attr="selected=${genre == 'autre'}">Autre</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pathologie">Pathologie (si applicable)</label>
+                <input type="text" id="pathologie" name="modifPathologie" th:value="${pathologie}">
+            </div>
+            
+            <div class="button-group">
+                <button type="submit">Modifier</button>
+            </div>
+        </form>
+        
+        <!-- Formulaire de déconnexion -->
+        <form th:action="@{/logout}" method="post">
+            <div class="button-group">
+                <button type="submit">Déconnexion</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

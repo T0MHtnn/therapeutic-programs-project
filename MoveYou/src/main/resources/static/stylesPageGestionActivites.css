@@ -1,0 +1,142 @@
+/* stylesPageGestionActivites.css */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #e0f7fa;
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 800px;
+	margin: 2rem auto;
+	padding: 2rem;
+	background-color: white;
+	border-radius: 1rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	color: #0079a1;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.search-form {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+.search-form input[type="text"] {
+	width: 60%;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 0.5rem;
+	margin-right: 1rem;
+}
+
+button, .btn-primary, .add-button, .modify-button, .btn-retour {
+	padding: 0.5rem 1rem;
+	background-color: #0079a1;
+	color: white;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s;
+	margin-top: 0.5rem; /* Ajoutez une marge pour espacer les boutons */
+}
+
+button:hover, .btn-primary:hover, .add-button:hover, .modify-button:hover,
+	.btn-retour:hover {
+	background-color: #005b7f;
+	transform: scale(1.05); /* Effet de mouvement */
+}
+
+.activities-list {
+	list-style: none;
+	padding: 0;
+}
+
+.activities-list li {
+	margin-bottom: 1.5rem;
+	/* Ajoutez de l'espace entre les éléments de la liste */
+}
+
+.activity-link {
+	cursor: pointer;
+}
+
+.activity-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+.activity-encart {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	background-color: #f0f8ff;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.programme-header {
+	flex: 1;
+	background-color: #0079a1;
+	color: #ffffff;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	margin-right: 1rem;
+}
+
+.programme-header a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.programme-header a:hover {
+	text-decoration: underline;
+}
+
+.error-message {
+	color: red;
+	margin: 0 1rem 0 0;
+}
+
+.add-form {
+	display: inline-flex;
+}
+
+.add-button {
+	padding: 0.5rem 1rem;
+	background-color: #0079a1;
+	color: white;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-button:hover {
+	background-color: #005b7f;
+	transform: scale(1.05);
+}
+
+.modal-content {
+	background-color: white;
+	border-radius: 1rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header, .modal-body {
+	padding: 1rem;
+}
+
+.modal-header .btn-close {
+	background-color: #0079a1;
+	border: none;
+	color: white;
+}

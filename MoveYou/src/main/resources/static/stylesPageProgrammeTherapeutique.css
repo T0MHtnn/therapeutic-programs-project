@@ -1,0 +1,135 @@
+/* stylesPageProgrammeTherapeutique.css */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #e0f7fa;
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+
+.header-with-button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background-color: #0079a1;
+	color: white;
+}
+
+.header-with-button ul {
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+}
+
+.header-button, .add-button, .delete-button, .rate-button {
+	background-color: #0079a1;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+.header-button:hover, .add-button:hover, .delete-button:hover,
+	.rate-button:hover {
+	background-color: #005b7f;
+	transform: scale(1.05); /* Effet de mouvement */
+}
+
+.main-container {
+	display: flex;
+	padding: 2rem;
+}
+
+.left-section {
+	flex: 1;
+}
+
+.button-and-note-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.note-encart {
+	background-color: #f0f8ff;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	margin-left: 1rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.noteProgramme {
+	text-align: center;
+}
+
+.activities-scroll-pane {
+	margin-top: 2rem;
+}
+
+.activities-list {
+	list-style: none;
+	padding: 0;
+}
+
+.activities-list li {
+	margin-bottom: 1.5rem;
+	/* Ajoutez de l'espace entre les éléments de la liste */
+}
+
+.programme-card {
+	background-color: white;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+.programme-header {
+	background-color: #0079a1;
+	color: #ffffff; /* Changer la couleur du texte en blanc */
+	padding: 1rem;
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.programme-header a {
+	color: #ffffff; /* Assurez-vous que le lien est également blanc */
+	text-decoration: none;
+}
+
+.programme-header a:hover {
+	text-decoration: underline;
+}
+
+.programme-body {
+	padding: 1rem;
+}
+
+.modal-content {
+	background-color: white;
+	border-radius: 1rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header, .modal-body {
+	padding: 1rem;
+}
+
+.modal-header .btn-close {
+	background-color: #0079a1;
+	border: none;
+	color: white;
+}
+
+footer {
+	background-color: #0079a1;
+	color: white;
+	text-align: center;
+	padding: 1rem;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
